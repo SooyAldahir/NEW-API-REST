@@ -1,5 +1,6 @@
 const Product = require('../models/productModel');
 const User = require('../models/userModel');
+const {ObjectChecker} = require('../ErrorHandling/Handling');
 
 
 // Promedio de precios por categorias
@@ -15,11 +16,17 @@ const averagePriceByCategory = async (req, res) => {
                 }
             }
         ]);
-        res.json(result)
+
+        ObjectChecker(result, res, "Promedio de precios")
+
+
     } catch (error) {
-        res.status(500).json({ message: "Error al calcular promedio de precios", error });
+        res.status(500).json({ message: "Error al calcular promedio de precios", Error: error.toString() });
     }
 }
+
+
+
 //  Cantidad de productos por categorias
 
 const countProductsByCategory = async (req, res) => {
@@ -32,11 +39,15 @@ const countProductsByCategory = async (req, res) => {
                 }
             }
         ]); 
-        rs.json(result)
+
+        ObjectChecker(result, res, "Productos")
+
+
     } catch (error) {
-        res.status(500).json({ message: "Error al contar productos", error });
+        res.status(500).json({ message: "Error al contar productos", Error: error.toString() });
     }
 }
+
 
 
 // Usuarios registrados en el último mes
@@ -50,11 +61,16 @@ const usersRegisteredLastMonth = async (req, res) => {
             {$match: {createdAt: { $gte: monthAgo }}},
             {$sort: {createdAt: -1}},
         ]);
-        res.jsom(users)
+
+        ObjectChecker(result, res, "Usuarios")
+
+
     } catch (error) {
-        res.status(500).json({ message: "Error al obtener usuarios", error });
+        res.status(500).json({ message: "Error al obtener usuarios", Error: error.toString() });
     }
 }
+
+
 
 // Total de stock agrupado por categoría
 
@@ -68,11 +84,16 @@ const totalStockByCategory = async (req, res) => {
                 }
             }
         ]);
-        res.json(result)
+
+        ObjectChecker(result, res, "Suma de stocks")
+
+
     } catch (error) {
-        res.status(500).json({ message: "Error al sumar stock", error });
+        res.status(500).json({ message: "Error al sumar stock", Error: error.toString()});
     }
 }
+
+
 
 module.exports = {
     averagePriceByCategory,
