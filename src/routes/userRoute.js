@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const usuarioController = require('../controllers/userController');
 
+
+// Esquema de datos para Swagger: User
 /**
  * @swagger
  * components:
@@ -29,7 +31,7 @@ const usuarioController = require('../controllers/userController');
  *         role: client
  */
 
-
+// Rutas CRUD para Usuarios
 /**
  * @swagger
  * /api/createUser:

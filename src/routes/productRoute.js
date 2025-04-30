@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
 
+// Esquema de datos para Swagger: Product
 /**
  * @swagger
  * components:
@@ -30,6 +31,8 @@ const productController = require('../controllers/productController');
  *         stock: 100
  *         category: Iluminación
  */
+
+// Rutas CRUD para Productos
 
 /**
  * @swagger

@@ -7,7 +7,7 @@ const advancedRoutes = require('./routes/adavancedRoute');
 const app = express(); //Inicializa el servidor express.
 
 
-// swagger
+// Configuración swagger
 const swaggerUI = require("swagger-ui-express");
 const swaggerDoc = require("swagger-jsdoc");
 const swaggerSpec = {
@@ -24,7 +24,7 @@ const swaggerSpec = {
           },
         ],
       },
-      apis: ['./src/routes/*.js'], // Donde están tus rutas
+      apis: ['./src/routes/*.js'],
 }
 
 
@@ -32,15 +32,15 @@ const swaggerSpec = {
 app.use(express.json());
 
 
-//Rutas
+//Rutas principales de la API
 app.use('/api/', userRoutes);
 app.use('/api/', productRoutes);
 app.use('/api/advanced', advancedRoutes);
-//swagger
+//swagger para entrar a la documentación debes agregar la ruta "/api-doc"
 app.use('/api-doc', swaggerUI.serve, swaggerUI.setup(swaggerDoc(swaggerSpec)))
 
 
-
+//Iniciar el servidor
 const PORT = process.env.PORT || 3005
 app.listen(PORT, async () => { 
     try {
