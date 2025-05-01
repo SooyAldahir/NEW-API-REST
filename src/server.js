@@ -22,7 +22,7 @@ const swaggerSpec = {
     },
     servers: [
       {
-        url: 'http://localhost:3005',
+        url: process.env.MONGO_URI || 'http://localhost:3005',
       },
     ],
   },
