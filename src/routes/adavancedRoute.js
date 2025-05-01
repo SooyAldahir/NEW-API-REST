@@ -8,6 +8,7 @@ const {
     totalStockByCategory,
 } = require('../controllers/advancedController')
 
+
 // Rutas para consultas avanzadas (Advanced queries)
 /**
  * @swagger
