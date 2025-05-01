@@ -93,6 +93,6 @@ Swagger envía la petición y muestra la respuesta de la API.
 La API esta desplegada en: Railway
 
 ```bash
- https://new-api-rest-production.up.railway.app
+https://new-api-rest-production-1432.up.railway.app/api-doc/
 ```
 
