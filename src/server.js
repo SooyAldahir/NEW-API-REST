@@ -22,7 +22,7 @@ const swaggerSpec = {
     },
     servers: [
       {
-        url: process.env.MONGO_URI || 'http://localhost:3005',
+        url: 'https://new-api-rest-production-1432.up.railway.app/api',
       },
     ],
   },
