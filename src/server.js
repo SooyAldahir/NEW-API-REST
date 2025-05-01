@@ -22,7 +22,7 @@ const swaggerSpec = {
     },
     servers: [
       {
-        url: 'https://new-api-rest-production-1432.up.railway.app/api',
+        url: 'https://new-api-rest-production-1432.up.railway.app',
       },
     ],
   },
