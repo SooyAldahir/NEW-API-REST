@@ -52,3 +52,4 @@ app.listen(PORT, async () => {
         console.log("Error al iniciar el servidor", error.toString());
     }
 })
+module.exports = app;
