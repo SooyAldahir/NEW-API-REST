@@ -3,7 +3,7 @@ const express = require("express");
 const ConnectDB = require("./config/db");
 const userRoutes = require('./routes/userRoute');
 const productRoutes = require('./routes/productRoute');
-const advancedRoutes = require('./routes/adavancedRoute');
+const advancedRoutes = require('./routes/advancedRoute');
 const app = express(); //Inicializa el servidor express.
 
 
